@@ -1,0 +1,48 @@
+spring:
+  application:
+    name: consul-client
+  profiles:
+    active: test
+  cloud:
+    consul:
+      #链接consul服务注册中心
+      host: localhost
+      port: 8500
+      discovery:
+        #consul可以自定义在注册中心名字
+        service-name: ${spring.application.name}
+server:
+  port: 8181
+
+management:
+  server:
+    port: 9001
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+---
+spring:
+  profiles: dev
+  cloud:
+    consul:
+      config:
+        enabled: true
+        format: yaml
+        prefix: config
+        profile-separator: ':'
+        data-key: data
+---
+spring:
+  profiles: test
+  cloud:
+    consul:
+      config:
+        enabled: true
+        format: yaml
+        prefix: config
+        profile-separator: ':'
+        data-key: data

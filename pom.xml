@@ -8,6 +8,9 @@
         <module>eureka-server</module>
         <module>eureka-client</module>
         <module>consul-client</module>
+        <module>service-user-interface</module>
+        <module>service-order</module>
+        <module>service-user</module>
     </modules>
 
     <!--创建Maven项目，继承spring-boot-starter-parent-->

@@ -1,20 +1,22 @@
 package com.lizhenfang.day01.service;
 
+import com.lizhenfang.day01.mapper.OrderMapper;
 import com.lizhenfang.day01.model.Order;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
+
 @Service
 public class OrderService {
+    @Resource
+    OrderMapper orderMapper;
     /**
      * 根据Id，查询order
      * @param id
      * @return
      */
     public Order getOrderById(Integer id){
-        Order order = new Order();
-        order.setId(id);
-        order.setOrderno(System.currentTimeMillis()+"");
-        order.setUserId(1);
-        return  order;
+        return  orderMapper.getOrderById(id);
+
     }
 }

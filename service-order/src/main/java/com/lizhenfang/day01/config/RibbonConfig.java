@@ -1,7 +1,7 @@
 package com.lizhenfang.day01.config;
 
 import com.netflix.loadbalancer.IRule;
-import com.netflix.loadbalancer.RandomRule;
+import com.netflix.loadbalancer.RoundRobinRule;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -27,9 +27,9 @@ public class RibbonConfig {
     @Bean
     public IRule iRule(){
         //随机算法
-         return new RandomRule();
+         //return new RandomRule();
         //轮询
-       // return  new RoundRobinRule();
+      return  new RoundRobinRule();
     }
 
 

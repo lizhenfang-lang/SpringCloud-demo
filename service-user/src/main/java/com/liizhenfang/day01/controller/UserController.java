@@ -31,6 +31,11 @@ public class UserController {
     @RequestMapping("getUserByUser")
     public User getUserByUser(@RequestBody User user){
         log.info("userId:{}",user.getId());
+       /* try {
+            Thread.sleep(5000);
+        }catch (InterruptedException e){
+            e.printStackTrace();
+        }*/
         return userService.getUserById(user.getId());
     }
 

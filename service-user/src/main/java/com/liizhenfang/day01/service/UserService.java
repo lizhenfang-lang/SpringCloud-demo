@@ -1,20 +1,23 @@
 package com.liizhenfang.day01.service;
 
+import com.liizhenfang.day01.mapper.UserMapper;
 import com.lizhenfang.day01.User;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
+
 @Service
 public class UserService {
+    @Resource
+    UserMapper userMapper;
     /**
      * 根据Id，查询user
      * @param id
      * @return
      */
     public User getUserById(Integer id){
-        User user = new User();
-        user.setId(id);
-        user.setUsername("userName:"+id);
-        return  user;
+
+        return  userMapper.getUserById(id);
     }
 
     /**

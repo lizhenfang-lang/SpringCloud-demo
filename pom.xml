@@ -12,6 +12,9 @@
         <module>service-order</module>
         <module>service-user</module>
         <module>zuul-server</module>
+        <module>cloud-gatway</module>
+        <module>config-server</module>
+        <module>config-client</module>
 
     </modules>
 

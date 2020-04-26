@@ -6,19 +6,25 @@ spring:
       server:
         git:
           #Git仓库，在公司里，配置仓储应该独立，与代码仓库分开
-          uri: https://gitee.com/zhanggm1002/zhanggm-springcloud-demo-1708d.git
+          #uri: https://gitee.com/zhanggm1002/zhanggm-springcloud-demo-1708d.git
           # uri: https://gitee.com/zhanggm1002/springcloud-demo-0325.git
-          #uri: https://github.com/lizhenfang-lang/SpringCloud-demo.git
+          #uri: https://gitee.com/li_zhenfang/SpringCloud-demo.git
+          uri: https://github.com/lizhenfang-lang/SpringCloud-demo.git
           search-paths:
             - configfiles
           #默认拉取配置Git分支
           default-label: master
           #如果你的Git不公开的，需要设置密码
-          #password:
+          #username: li_zhenfang
+          #password: 123456lzf
       #从哪个分支去拉去配置文件
       label: spring-cloud-config
 server:
   port: 8888
+  #给配置中心统一加访问前缀，在网关配置路由
+  servlet:
+    context-path: /config/
+
 eureka:
   client:
     service-url:

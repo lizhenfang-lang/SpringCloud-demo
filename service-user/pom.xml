@@ -31,6 +31,10 @@
             <artifactId>lombok</artifactId>
             <optional>true</optional>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-config-client</artifactId>
+        </dependency>
         <!--mysql驱动程序-->
         <dependency>
             <groupId>mysql</groupId>
